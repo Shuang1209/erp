@@ -1,0 +1,21 @@
+{
+  "name": "erp-monorepo",
+  "private": true,
+  "workspaces": ["backend", "admin-web", "miniapp", "packages/*"],
+  "scripts": {
+    "lint": "npm -w backend run lint && npm -w admin-web run lint && npm -w miniapp run lint",
+    "format": "prettier -w .",
+    "test": "npm -w backend run test"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^9.9.0",
+    "prettier": "^3.3.3",
+    "lint-staged": "^15.2.7",
+    "husky": "^9.1.6"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx,json,md}": "prettier -w"
+  }
+}
